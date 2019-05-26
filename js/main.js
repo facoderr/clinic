@@ -72,20 +72,23 @@ $(document).ready(function() {
 			$('.head-menu').slideUp(300);
 		}
 	});
-	$(document).on('click', '.js-call', function() {
-		var form = $(this).data('form');
-		$('.js-form').val(form);
-		$('.popup').addClass('open');
+	$(document).on('click', '.js-order', function() {
+		$('.popup').removeClass('open');
+		$('.popup-order').addClass('open');
 	});
-	$(document).on('click', '.js-submit', function(event) {
-		var phone = $(this).parent().find('input[name="phone"]');
-		if (phone != null && phone.val().length < 5) {
-			alert('поле "Телефон" должно содержать минимум 5 символов');
-			event.preventDefault();
-		}
+	$(document).on('click', '.js-call', function() {
+		$('.popup').removeClass('open');
+		$('.popup-call').addClass('open');
+	});
+	$(document).on('click', '.js-price', function() {
+		$('.popup').removeClass('open');
+		$('.popup-price').addClass('open');
+	});
+	$(document).on('click', '.js-close', function() {
+		$('.popup').removeClass('open');
 	});
 	$(document).bind('mouseup touchend', function(e) {
-		if ($(e.target).closest('.popup-call').length) return;
+		if ($(e.target).closest('.popup-form').length || $(e.target).closest('.popup-block').length) return;
 		$('.popup').removeClass('open');
 	});
 
@@ -124,22 +127,23 @@ $(document).ready(function() {
 
 	// Tab Event
 
-	var clickedTab = $('.services-tabItem.active');
-	var tabWrapper = $('.services-tabWrap');
-	var activeTab = tabWrapper.find('.open');
-	var activeTabHeight = activeTab.outerHeight();
-	
-	activeTab.show();
-	tabWrapper.height(activeTabHeight);
+	$(function() {
+		var clickedTab = $('.services-tabItem.active');
+		var tabWrapper = $('.services-tabWrap');
+		var activeTab = tabWrapper.find('.open');
+		var activeTabHeight = activeTab.outerHeight();
 
-	function tabInit() {
-		clickedTab = $('.services-tabItem.active');
-		activeTab.fadeOut(300, function() {
-			$('.services-tabInfo').removeClass('open');
-			var clickedTabIndex = clickedTab.index('.services-tabItem');
-			$('.services-tabInfo').eq(clickedTabIndex).addClass('open');
-			activeTab = $('.services-tabWrap .open');
-			activeTabHeight = activeTab.outerHeight();
+		activeTab.show();
+		tabWrapper.height(activeTabHeight);
+
+		function tabInit() {
+			clickedTab = $('.services-tabItem.active');
+			activeTab.fadeOut(300, function() {
+				$('.services-tabInfo').removeClass('open');
+				var clickedTabIndex = clickedTab.index('.services-tabItem');
+				$('.services-tabInfo').eq(clickedTabIndex).addClass('open');
+				activeTab = $('.services-tabWrap .open');
+				activeTabHeight = activeTab.outerHeight();
 			//scroll = $('.services-tabWrap').offset().top;
 			//$('html, body').animate({
 				//scrollTop: scroll - 70
@@ -150,12 +154,49 @@ $(document).ready(function() {
 				activeTab.delay(50).fadeIn(250);
 			});
 		});
-	}
-	tabInit();
-	$('.services-tabList').on('click', '.services-tabItem', function() {
-		$('.services-tabItem').removeClass('active');
-		$(this).addClass('active');
+		}
 		tabInit();
+		$('.services-tabList').on('click', '.services-tabItem', function() {
+			$('.services-tabItem').removeClass('active');
+			$(this).addClass('active');
+			tabInit();
+		});
+	});
+
+	$(function() {
+		var clickedTab = $('.popup-tabItem.active');
+		var tabWrapper = $('.popup-tabWrap');
+		var activeTab = tabWrapper.find('.open');
+		var activeTabHeight = activeTab.outerHeight();
+		
+		activeTab.show();
+		tabWrapper.height(activeTabHeight);
+
+		function tabInit() {
+			clickedTab = $('.popup-tabItem.active');
+			activeTab.fadeOut(300, function() {
+				$('.popup-tabInfo').removeClass('open');
+				var clickedTabIndex = clickedTab.index('.popup-tabItem');
+				$('.popup-tabInfo').eq(clickedTabIndex).addClass('open');
+				activeTab = $('.popup-tabWrap .open');
+				activeTabHeight = activeTab.outerHeight();
+			//scroll = $('.popup-tabWrap').offset().top;
+			//$('html, body').animate({
+				//scrollTop: scroll - 70
+			//}, 700);
+			tabWrapper.stop().delay(50).animate({
+				height: activeTabHeight
+			}, 250, function() {
+				activeTab.delay(50).fadeIn(250);
+			});
+		});
+		}
+		tabInit();
+		$('.popup-tabList').on('click', '.popup-tabItem', function() {
+			$('.popup-tabItem').removeClass('active');
+			$(this).addClass('active');
+			tabInit();
+		});
 	});
 
 	//
