@@ -294,6 +294,7 @@ $(document).ready(function() {
 							return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
 						}
 						$this.text(prettify(this.countNum));
+						$this.removeAttr('data-count');
 					}
 				});
 			}

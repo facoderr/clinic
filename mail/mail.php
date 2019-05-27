@@ -1,7 +1,7 @@
 <?php
 
-	$from = 'support@clinic.ru';
-	$to  = 'farkhad-r@mail.ru';
+	$from = 'support@mysite.ru';
+	$to  = 'test@mymail.ru, test@mymail.ru';
 
 	$name = trim($_POST['name']);
 	$phone = trim($_POST['phone']);

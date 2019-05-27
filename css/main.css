@@ -1363,10 +1363,6 @@ h2 + p {
   margin: 0 0 0 -55px;
 }
 
-.reviews-sliderFor .slide:nth-child(odd) .reviews-user-img {
-  background: #e6fbff url("../img/reviews/girl.svg") no-repeat center bottom;
-}
-
 .reviews-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1386,8 +1382,7 @@ h2 + p {
 .reviews-user-img {
   width: 100%;
   height: 270px;
-  background: #e6fbff url("../img/reviews/man.svg") no-repeat center bottom;
-  background-size: 85%;
+  background: #e6fbff;
 }
 
 .reviews-user-img img {
@@ -1514,29 +1509,28 @@ h2 + p {
   margin: 5px 0;
 }
 
-.reviews-sliderNav .slide:nth-child(even) .reviews-item {
-  background: #09327d url("../img/reviews/girl.svg") no-repeat center bottom;
-}
-
-.reviews-sliderNav .slick-current:nth-child(even) .reviews-item {
-  background-color: #e6fbff;
-}
-
 .reviews-sliderNav .slick-current .reviews-item {
-  background-color: #e6fbff;
+  background: #e6fbff;
   opacity: 1;
 }
 
 .reviews-item {
   width: 64px;
   height: 64px;
-  background: #09327d url("../img/reviews/man.svg") no-repeat center bottom;
+  background: #09327d;
   -webkit-border-radius: 50%;
           border-radius: 50%;
   cursor: pointer;
+  overflow: hidden;
   opacity: .4;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+}
+
+.reviews-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .reviews-prev, .reviews-next {
@@ -1987,7 +1981,7 @@ h2 + p {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  top: inherit;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -2391,7 +2385,7 @@ h2 + p {
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    top: inherit;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -2891,16 +2885,6 @@ h2 + p {
   .questions {
     padding: 70px 0;
   }
-  .questions:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -1px;
-    left: 0;
-    height: 2px;
-    background: #09327d;
-    z-index: 1;
-  }
   .questions-img {
     display: none;
   }
@@ -3147,18 +3131,6 @@ h2 + p {
   .reviews-sliderNav {
     width: 400px;
   }
-  .reviews-sliderNav .slide:nth-child(even) .reviews-item {
-    background: #09327d url(../img/reviews/man.svg) no-repeat center bottom;
-  }
-  .reviews-sliderNav .slick-current:nth-child(even) .reviews-item {
-    background-color: #e6fbff;
-  }
-  .reviews-sliderNav .slick-current .reviews-item {
-    background-color: #e6fbff;
-  }
-  .reviews-item {
-    background: #09327d url("../img/reviews/girl.svg") no-repeat center;
-  }
   .reviews-prev {
     left: 15px;
   }
@@ -3352,14 +3324,12 @@ h2 + p {
     margin: 0 0 40px;
   }
   .price-box {
-    border-right: none;
-    border-left: none;
+    border: none;
     padding: 25px 15px;
-    margin: 0 -15px 30px;
+    margin: 0 0 30px;
   }
   .price-box:hover {
-    border-right: none;
-    border-left: none;
+    border: none;
   }
   .price-box-title {
     font-size: 21px;
@@ -3400,7 +3370,11 @@ h2 + p {
   }
   .services-tabTitle {
     font-size: 16px;
+    padding: 0 10px;
     margin: 0 0 15px;
+  }
+  .services-tabRow {
+    padding: 0 10px;
   }
   .services-tabContent p {
     font-size: 13px;
@@ -3443,6 +3417,9 @@ h2 + p {
   .stages-title {
     margin: 0 0 40px;
   }
+  .stages-box {
+    padding: 0 20px;
+  }
   .stages-box-step {
     font-size: 14px;
     padding: 0 0 0 22px;
@@ -3468,7 +3445,6 @@ h2 + p {
   }
   .stages-note {
     padding: 20px 15px;
-    margin: 0 -15px;
   }
   .stages-note-mark {
     font-size: 40px;
@@ -3502,24 +3478,25 @@ h2 + p {
     padding: 50px 0;
   }
   .reviews-sliderFor .slick-prev, .reviews-sliderFor .slick-next {
-    top: 160px;
+    top: 180px;
     opacity: .5;
   }
   .reviews-sliderFor .slick-prev:hover, .reviews-sliderFor .slick-next:hover {
     opacity: 1;
   }
   .reviews-sliderFor .slick-prev {
-    left: 10px;
+    left: 20px;
   }
   .reviews-sliderFor .slick-next {
-    right: 10px;
+    right: 20px;
   }
   .reviews-user {
     display: block;
+    margin: 0 10px 30px;
   }
   .reviews-user-img {
     width: 100%;
-    height: 250px;
+    height: 290px;
   }
   .reviews-user-detail {
     width: 100%;
@@ -3532,7 +3509,7 @@ h2 + p {
   }
   .reviews-text {
     border: none;
-    padding: 0;
+    padding: 0 10px;
   }
   .reviews-text h4 {
     font-size: 17px;
@@ -3619,11 +3596,11 @@ h2 + p {
   .questions-title {
     margin: 0 0 40px;
   }
-  .questions-accordion {
-    margin: 0 -15px;
-  }
   .questions-box-head {
     font-size: 14px;
+  }
+  .questions-box-arrow {
+    margin: 0 0 0 15px;
   }
   .questions-box-arrow svg {
     width: 14px;
@@ -3634,6 +3611,9 @@ h2 + p {
   }
   .callback {
     padding: 50px 0;
+  }
+  .callback:after {
+    display: none;
   }
   .callback-list {
     margin: 40px 0 50px;
@@ -3654,7 +3634,6 @@ h2 + p {
   .callback-form {
     width: auto;
     padding: 40px 15px;
-    margin: 0 -15px;
   }
   .callback-form-title {
     font-size: 21px;
