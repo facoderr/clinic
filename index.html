@@ -44,24 +44,39 @@
 						<nav class="head-nav">
 							<ul class="head-menu">
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">Цены</a>
+									<a href="#price" class="head-menu-link js-anchor">
+										Цены
+									</a>
 								</li>
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">Методики</a>
+									<a href="#services" class="head-menu-link js-anchor">
+										Методики
+									</a>
 								</li>
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">Этапы лечения</a>
+									<a href="#stages" class="head-menu-link js-anchor">
+										Этапы лечения
+									</a>
 								</li>
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">Отзывы</a>
+									<a href="#reviews" class="head-menu-link js-anchor">
+										Отзывы
+									</a>
 								</li>
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">Специалисты</a>
+									<a href="#personal" class="head-menu-link js-anchor">
+										Специалисты
+									</a>
 								</li>
 								<li class="head-menu-item">
-									<a href="/" class="head-menu-link">О клинике</a>
+									<a href="#about" class="head-menu-link js-anchor">
+										О клинике
+									</a>
 								</li>
 							</ul>
+							<a href="javascript:void(0);" class="head-close js-close">
+								<img src="img/icons/close.svg">
+							</a>
 						</nav>
 						<div class="head-phone">
 							<span>+7 (929) 912-22-76</span>
@@ -69,6 +84,9 @@
 								<img src="img/icons/phone.svg">
 								Записаться на приём
 							</a>
+						</div>
+						<div class="head-toggle js-toggle">
+							<hr><hr><hr>
 						</div>
 					</div>
 				</div>
@@ -81,7 +99,7 @@
 	<main class="main">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7">
+				<div class="col-12 col-md-9 col-lg-7">
 					<div class="main-title">
 						<h1>
 							Установим
@@ -104,7 +122,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-12 col-md-3 col-lg-5">
 					<div class="main-img">
 						<img src="img/main.png">
 					</div>
@@ -114,7 +132,7 @@
 		<div class="main-feature">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-12 col-md-6 col-xl-3">
 						<div class="main-feature-box">
 							<div class="main-feature-box-icon">
 								<img src="img/icons/dentist.svg">
@@ -128,7 +146,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-12 col-md-6 col-xl-3">
 						<div class="main-feature-box">
 							<div class="main-feature-box-icon">
 								<img src="img/icons/tooth.svg">
@@ -142,7 +160,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-12 col-md-6 col-xl-3">
 						<div class="main-feature-box">
 							<div class="main-feature-box-icon">
 								<img src="img/icons/appointment.svg">
@@ -156,7 +174,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-12 col-md-6 col-xl-3">
 						<div class="main-feature-box">
 							<div class="main-feature-box-icon">
 								<img src="img/icons/hospital_dark.svg">
@@ -180,7 +198,7 @@
 	<section class="callback">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7">
+				<div class="col-12 col-lg-6 col-xl-7">
 					<div class="callback-title">
 						<h2>
 							Пройдите <span>бесплатное
@@ -217,7 +235,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-12 col-lg-6 col-xl-5">
 					<div class="callback-form">
 						<div class="callback-form-title">
 							Запишитесь
@@ -257,7 +275,7 @@
 	<!-- End Callback -->
 
 	<!-- Price -->
-	<section class="price">
+	<section id="price" class="price">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -271,8 +289,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-7 col-xl-4">
 					<div class="price-box">
 						<div class="price-box-title">Бюджет</div>
 						<ul class="price-box-list">
@@ -319,7 +337,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-12 col-md-7 col-xl-4">
 					<div class="price-box">
 						<div class="price-box-title">Оптимум</div>
 						<ul class="price-box-list">
@@ -366,7 +384,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-12 col-md-7 col-xl-4">
 					<div class="price-box">
 						<div class="price-box-title">Премиум</div>
 						<ul class="price-box-list">
@@ -426,7 +444,7 @@
 	<!-- End Price -->
 
 	<!-- Services -->
-	<section class="services">
+	<section id="services" class="services">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -441,7 +459,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-12 col-lg-4 col-xl-3">
 					<ul class="services-tabList">
 						<li class="services-tabLabel">Имплатация</li>
 						<li class="services-tabItem active">
@@ -477,7 +495,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-12 col-lg-8 col-xl-9">
 					<div class="services-tabWrap">
 						<div class="services-tabInfo open">
 							<div class="services-tabTitle">Одномоментная имплантация</div>
@@ -1079,7 +1097,7 @@
 	<!-- End Services -->
 
 	<!-- Stages -->
-	<section class="stages">
+	<section id="stages" class="stages">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -1100,8 +1118,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-4">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-7 col-lg-4">
 					<div class="stages-box">
 						<div class="stages-box-step">
 							Этап 1
@@ -1132,7 +1150,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-12 col-md-7 col-lg-4">
 					<div class="stages-box">
 						<div class="stages-box-step">
 							Этап 2
@@ -1163,7 +1181,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-12 col-md-7 col-lg-4">
 					<div class="stages-box">
 						<div class="stages-box-step">
 							Этап 3
@@ -1221,7 +1239,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-12 col-md-6 col-xl-3">
 					<div class="advantages-box">
 						<div class="advantages-box-icon">
 							<img src="img/icons/chair_white.svg">
@@ -1234,7 +1252,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-12 col-md-6 col-xl-3">
 					<div class="advantages-box">
 						<div class="advantages-box-icon">
 							<img src="img/icons/hospital_white.svg">
@@ -1247,7 +1265,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-12 col-md-6 col-xl-3">
 					<div class="advantages-box">
 						<div class="advantages-box-icon">
 							<img src="img/icons/shield_white.svg">
@@ -1260,7 +1278,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-12 col-md-6 col-xl-3">
 					<div class="advantages-box">
 						<div class="advantages-box-icon">
 							<img src="img/icons/check_white.svg">
@@ -1279,7 +1297,7 @@
 	<!-- End Advantages -->
 
 	<!-- Reviews -->
-	<section class="reviews">
+	<section id="reviews" class="reviews">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -1294,7 +1312,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-11">
+				<div class="col-12 col-xl-11">
 					<div class="reviews-sliderFor">
 						<div class="slide">
 							<div class="reviews-row">
@@ -1649,7 +1667,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-1">
+				<div class="col-12 col-xl-1">
 					<div class="reviews-sliderNav">
 						<div class="slide">
 							<div class="reviews-item"></div>
@@ -1682,7 +1700,7 @@
 	<!-- End Reviews -->
 
 	<!-- Personal -->
-	<section class="personal">
+	<section id="personal" class="personal">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -1787,7 +1805,7 @@
 	<section class="count">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-sm-6 col-lg-3">
 					<div class="count-box">
 						<div class="count-box-icon">
 							<img src="img/icons/chair_white.svg">
@@ -1798,7 +1816,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-sm-6 col-lg-3">
 					<div class="count-box">
 						<div class="count-box-icon">
 							<img src="img/icons/check_white.svg">
@@ -1809,7 +1827,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-sm-6 col-lg-3">
 					<div class="count-box">
 						<div class="count-box-icon">
 							<img src="img/icons/shield_white.svg">
@@ -1820,7 +1838,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3">
+				<div class="col-sm-6 col-lg-3">
 					<div class="count-box">
 						<div class="count-box-icon">
 							<img src="img/icons/hospital_white.svg">
@@ -1837,7 +1855,7 @@
 	<!-- End Count -->
 
 	<!-- About -->
-	<section class="about">
+	<section id="about" class="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -1851,8 +1869,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-lg-7 order-lg-2">
+			<div class="row justify-content-center">
+				<div class="col-12 col-lg-6 col-xl-7 order-lg-2">
 					<div class="about-text">
 						<h4>Имплатация всей челюсти</h4>
 						<p>
@@ -1869,7 +1887,7 @@
 						Получить консультацию
 					</a>
 				</div>
-				<div class="col-lg-5 order-lg-1">
+				<div class="col-12 col-md-10 col-lg-6 col-xl-5 order-lg-1">
 					<div class="about-sliderFor">
 						<div class="slide">
 							<img src="img/about/1.jpg" class="js-obj">
@@ -1938,7 +1956,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-7">
+				<div class="col-12 col-lg-7">
 					<div class="questions-accordion">
 						<div class="questions-box open">
 							<div class="questions-box-head">
@@ -2002,7 +2020,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-12 col-lg-5">
 					<div class="questions-img">
 						<img src="img/content_img_2.jpg" class="js-obj">
 					</div>
@@ -2016,7 +2034,7 @@
 	<section class="callback">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-7">
+				<div class="col-12 col-lg-6 col-xl-7">
 					<div class="callback-title">
 						<h2>
 							Пройдите <span>бесплатное
@@ -2052,10 +2070,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-12 col-lg-6 col-xl-5">
 					<div class="callback-form">
 						<div class="callback-form-title">
 							Запишитесь
+							<br>
 							на прохождение
 						</div>
 						<div class="callback-form-subtitle">
@@ -2109,9 +2128,9 @@
 							<br>
 							г. Химки, ул. Московская, д. 14
 						</div>
-						<div class="head-phone">
+						<div class="foot-phone">
 							<span>+7 (929) 912-22-76</span>
-							<a href="javascript:void(0);" class="head-btn js-call">
+							<a href="javascript:void(0);" class="foot-btn js-call">
 								<img src="img/icons/phone.svg">
 								Записаться на приём
 							</a>
@@ -2161,6 +2180,7 @@
 		<div class="popup-form">
 			<div class="popup-form-title">
 				Запишитесь
+				<br>
 				на прохождение
 			</div>
 			<div class="popup-form-subtitle">
