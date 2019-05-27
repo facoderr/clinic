@@ -140,8 +140,9 @@ $(document).ready(function() {
 		$('.popup').removeClass('open');
 	});
 	$(document).bind('mouseup touchend', function(e) {
-		if ($(e.target).closest('.popup-form').length || $(e.target).closest('.popup-block').length) return;
+		if ($(e.target).closest('.popup-form').length || $(e.target).closest('.popup-block').length || $(e.target).closest('.popup-note').length || $(e.target).closest('.js-required').length) return;
 		$('.popup').removeClass('open');
+		$('.input').removeClass('error');
 	});
 
 	//
@@ -269,6 +270,35 @@ $(document).ready(function() {
 
 	// Scroll Event
 
+	$(window).bind('scroll', function() {
+		$('.animated').each(function(){
+			if ($(document).scrollTop() >= $(this).offset().top - 600) {
+				$(this).removeClass('animated');
+			}
+		});
+		$('.count-box-numb').each(function() {
+			var $this = $(this),
+			countTo = $this.attr('data-count');
+			if ($(document).scrollTop() >= $this.offset().top - 600) {
+				$({ countNum: $this.text()}).animate({
+					countNum: countTo
+				}, {
+					duration: 5000,
+					easing:'linear',
+					step: function() {
+						$this.text(Math.floor(this.countNum));
+					},
+					complete: function() {
+						function prettify(num) {
+							var n = num.toString();
+							return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
+						}
+						$this.text(prettify(this.countNum));
+					}
+				});
+			}
+		});
+	});
 	$(document).on('click', '.js-anchor', function() {
 		var id = $(this).attr('href');
 				scroll = $(id).offset().top;
@@ -283,28 +313,55 @@ $(document).ready(function() {
 
 	//
 
-	// Resize Event
+	// Count Event
 
-	$(window).on('load', function() {
-		if ($(this).width() <= 1059) {
-			$('.advice-box-btn').each(function() {
-				$(this).parent().parent().find('.advice-box-info').append($(this));
-			});
-		} else {
-			$('.advice-box-btn').each(function() {
-				$(this).parent().parent().find('.advice-box-order').append($(this));
-			});
+	
+
+	//
+
+	// Validate Event
+
+	$('.js-validate-name').on('keyup', function(e) {
+		var regex =	/[^a-zA-Zа-яА-ЯёЁ\s-']/;
+		$(this).parent().toggleClass('error', regex.test($(this).val()) || $(this).val() == '');
+	});
+	$('.js-validate-phone').on('keypress', function(event) {
+		if (!(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { 
+			event.preventDefault() 
+		}
+		var mask = '+0 (000)-000-00-00';
+		if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+			var currentString = $(this).val();
+			var currentLength = currentString.length;
+			if (/[0-9]/.test(event.key)) {
+				if (mask[currentLength] == '0') {
+					this.value = currentString + event.key;
+					
+				} else {
+					for (var i = currentLength; i < mask.length; i++) {
+						if (mask[i] == '0') {
+							this.value = currentString + event.key;
+							break;
+						}
+						currentString += mask[i];
+					}
+				}
+			}
+		}
+		$(this).parent().toggleClass('error', $(this).val().length < 18);
+	}).on('keyup', function(event) {
+		if (event.key == 'Backspace') {
+			$('.js-validate-phone').trigger('keypress');
 		}
 	});
-	$(window).on('resize', function() {
-		if ($(this).width() <= 1059) {
-			$('.advice-box-btn').each(function() {
-				$(this).parent().parent().find('.advice-box-info').append($(this));
+	$(document).on('click', '.js-submit', function(event) {
+		if ($('.js-required').val() == '') {
+			event.preventDefault();
+			$('.js-required').each(function(){
+				$(this).parent().toggleClass('error', $(this).val() == '');
 			});
-		} else {
-			$('.advice-box-btn').each(function() {
-				$(this).parent().parent().find('.advice-box-order').append($(this));
-			});
+		} else if ($('.js-required').parent().hasClass('error')) {
+			event.preventDefault();
 		}
 	});
 
@@ -315,6 +372,14 @@ $(document).ready(function() {
 	$(window).on('load', function() {
 		$('.pulse').fadeOut();
 		$('.preloader').delay(400).fadeOut('slow');
+
+		setTimeout(function(){
+			$('.animated').each(function(){
+				if ($(document).scrollTop() >= $(this).offset().top - 600) {
+					$(this).removeClass('animated');
+				}
+			});
+		}, 500);
 	});
 
 	//
