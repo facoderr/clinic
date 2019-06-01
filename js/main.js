@@ -314,12 +314,6 @@ $(document).ready(function() {
 
 	//
 
-	// Count Event
-
-	
-
-	//
-
 	// Validate Event
 
 	$('.js-validate-name').on('keyup', function(e) {
@@ -356,12 +350,12 @@ $(document).ready(function() {
 		}
 	});
 	$(document).on('click', '.js-submit', function(event) {
-		if ($('.js-required').val() == '') {
+		if ($(this).parent().find('.js-required').val() == '') {
 			event.preventDefault();
-			$('.js-required').each(function(){
+			$(this).parent().find('.js-required').each(function(){
 				$(this).parent().toggleClass('error', $(this).val() == '');
 			});
-		} else if ($('.js-required').parent().hasClass('error')) {
+		} else if ($(this).parent().find('.js-required').parent().hasClass('error')) {
 			event.preventDefault();
 		}
 	});
