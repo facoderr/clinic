@@ -270,12 +270,12 @@ $(document).ready(function() {
 
 	// Scroll Event
 
-	function inWindow(s){
+	function inWindow(s) {
 		var scrollTop = $(window).scrollTop();
 		var windowHeight = $(window).height();
 		var currentEls = $(s);
 		var result = [];
-		currentEls.each(function(){
+		currentEls.each(function() {
 			var el = $(this);
 			var offset = el.offset();
 			if(scrollTop <= offset.top && (el.height() + offset.top) < (scrollTop + windowHeight))
@@ -377,8 +377,8 @@ $(document).ready(function() {
 	$(window).on('load', function() {
 		$('.pulse').fadeOut();
 		$('.preloader').delay(400).fadeOut('slow');
-		setTimeout(function(){
-			$('.animated').each(function(){
+		setTimeout(function() {
+			$('.animated').each(function() {
 				if ($(document).scrollTop() >= $(this).offset().top - 600) {
 					$(this).removeClass('animated');
 				}
