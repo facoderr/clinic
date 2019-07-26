@@ -1821,7 +1821,7 @@ h2 + p {
 }
 
 .questions-img {
-  width: 470px;
+  width: 100%;
   height: 365px;
 }
 
@@ -2682,7 +2682,6 @@ h2 + p {
     margin: 0 0 60px;
   }
   .questions-img {
-    width: 400px;
     height: 387px;
   }
   .callback {
